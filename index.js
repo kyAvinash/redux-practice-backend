@@ -58,7 +58,7 @@ app.put("/movies/:id", async(req,res)=>{
 	try{
 		const updatedMovie = await Movies.findByIdAndUpdate(movieId,updatedMovieData,{new:true});
 		if(!updatedMovie){
-			return res.status.(404).json({message:"Movie not Found"});
+			return res.status(404).json({message:"Movie not Found"});
 		}
 		res.status(200).json(updatedMovie);
 	}catch(error){
